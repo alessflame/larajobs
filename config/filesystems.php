@@ -39,7 +39,7 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => 'https://larajobs-alessflame.vercel.app'.'/storage',
             'visibility' => 'public',
             'throw' => false,
         ],
