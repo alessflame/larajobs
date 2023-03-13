@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Storage;
+use Psy\Readline\Hoa\FileRead;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,7 @@ Route::get("/hello",function (){
 } );
 
 
-Route::get("/storage/{filename}",function ($file){
-    // dd($file);
-    return Storage::get("public/". $file);
-} );
+// Route::get("/storage/{filename}",function ($file){
+//     // dd($file);
+//     return FileRead:: (Storage::get("public/". $file));
+// } );
