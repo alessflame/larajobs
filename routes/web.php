@@ -34,6 +34,6 @@ Route::get("/hello",function (){
 
 
 Route::get("/storage/{filename}",function ($file){
-    dd($file);
+    // dd($file);
     return Storage::get("public/". $file);
 } );
