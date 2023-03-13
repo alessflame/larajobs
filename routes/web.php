@@ -19,7 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/linkstorage', function () {
-    Artisan::call('storage:link');
+     Artisan::call('storage:link');
+     return "";
 });
 
 Route::get("/cvpdf/{cv}",function (){
