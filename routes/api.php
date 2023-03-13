@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\Api\Auth\AuthController;
-use App\Http\Controllers\Api\CategoryController;
-use App\Http\Controllers\Api\JobAdController;
-use App\Http\Controllers\Api\CompanyController;
-use App\Http\Controllers\Api\CvController;
-use App\Http\Controllers\Api\jobApplicationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\Api\CvController;
+use App\Http\Controllers\Api\JobAdController;
+use App\Http\Controllers\Api\CompanyController;
+use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\Auth\AuthController;
+use App\Http\Controllers\Api\jobApplicationController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /*
@@ -21,9 +22,9 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 Route::post("/authenticate/login", [AuthController::class, "login"]);
 Route::post("/authenticate/register", [AuthController::class, "register"]);
@@ -33,6 +34,9 @@ Route::get("/jobs", [JobAdController::class, "someJobs"]);
 Route::get("/companies", [CompanyController::class, "index"]);
 Route::get("/companies/{company}", [CompanyController::class, "show"]);
 
+   Route::get('/linkstorage', function () {
+        Artisan::call('storage:link');
+    });
 
 
 Route::group(["middleware" => "jwt.verify", "prefix" => "auth"], function () {
@@ -54,6 +58,7 @@ Route::group(["middleware" => "jwt.verify", "prefix" => "auth"], function () {
     Route::get("/cv",[CvController::class,"show"]);
     Route::post("/cv",[CvController::class,"store"]);
     Route::delete("/cv",[CvController::class,"destroy"]);
+
 
 });
 
