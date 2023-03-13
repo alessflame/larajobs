@@ -26,3 +26,7 @@ Route::get('/linkstorage', function () {
 Route::get("/cvpdf/{cv}",function (){
     return "ciao";
 } );
+
+Route::get("/hello",function (){
+    return "ciao";
+} );
