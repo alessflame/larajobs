@@ -1,7 +1,7 @@
 /node_modules
 /public/build
 /node_modules
-/public/storage
+
 /public/hot
 /storage/framework
 /storage/logs
