@@ -21,3 +21,7 @@ Route::get('/', function () {
 Route::get('/linkstorage', function () {
     Artisan::call('storage:link');
 });
+
+Route::get("/cvpdf/{cv}",function (){
+    return "ciao";
+} );
