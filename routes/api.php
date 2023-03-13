@@ -34,9 +34,9 @@ Route::get("/jobs", [JobAdController::class, "someJobs"]);
 Route::get("/companies", [CompanyController::class, "index"]);
 Route::get("/companies/{company}", [CompanyController::class, "show"]);
 
-   Route::get('/linkstorage', function () {
-        Artisan::call('storage:link');
-    });
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
+});
 
 
 Route::group(["middleware" => "jwt.verify", "prefix" => "auth"], function () {
@@ -55,11 +55,9 @@ Route::group(["middleware" => "jwt.verify", "prefix" => "auth"], function () {
     Route::post("/applications", [jobApplicationController::class, "store"]);
     Route::delete("/applications", [jobApplicationController::class, "destroy"]);
 
-    Route::get("/cv",[CvController::class,"show"]);
-    Route::post("/cv",[CvController::class,"store"]);
-    Route::delete("/cv",[CvController::class,"destroy"]);
-
-
+    Route::get("/cv", [CvController::class, "show"]);
+    Route::post("/cv", [CvController::class, "store"]);
+    Route::delete("/cv", [CvController::class, "destroy"]);
 });
 
 // Route::get("/*", function(){ return throw new NotFoundHttpException("risorsa non trovata");});
