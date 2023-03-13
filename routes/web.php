@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,10 @@ Route::get("/cvpdf/{cv}",function (){
 
 Route::get("/hello",function (){
     return "ciao";
+} );
+
+
+Route::get("/storage/{filename}",function ($file){
+    dd($file);
+    return Storage::get("public/". $file);
 } );
