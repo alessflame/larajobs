@@ -11,6 +11,7 @@
         "APP_ENV": "production",
         "APP_DEBUG": "false",
         "APP_URL": "https://https://larajobs-alessflame.vercel.app",
+        "FILESYSTEM_DISK":"public",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
