@@ -34,25 +34,6 @@ class CvService extends BaseService implements CvServiceInterface
 
     public function createCv($request, $user)
     {
-        // if ($request->hasFile("cvfile")) {
-        //     //find
-        //     if ($file = $this->cvRepository->find($user)) {
-        //         if (Storage::exists('public/' . $file->filename)) {
-        //             Storage::delete('public/' . $file->filename);
-        //         }
-        //         //delete
-        //         $this->cvRepository->delete($user);
-        //     }
-
-        //     if ($path = $request->file("cvfile")->store("public")) {
-        //         //create
-        //         $this->response= $this->cvRepository->create($user, $path);
-        //         return $this->parseResponse();
-        //     };
-        //     $this->status = false;
-        // }
-        // $this->status = false;
-
         if ($request->hasFile("cvfile")) {
             //find
             if ($file = $this->cvRepository->find($user)) {
