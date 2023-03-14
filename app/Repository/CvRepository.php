@@ -18,9 +18,10 @@ class CvRepository implements CvRepositoryInterface
         return $this->getModel()->where("user_id", $user)->first();
     }
 
-    public function create($user, $path)
+    public function create($user, $name)
     {
-        return $this->getModel()->create(["filename" => explode("/", $path)[1], "user_id" => $user]);
+        // return $this->getModel()->create(["filename" => explode("/", $path)[1], "user_id" => $user]);
+        return $this->getModel()->create(["filename" => $name, "user_id" => $user]);
 
     }
 
