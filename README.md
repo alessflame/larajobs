@@ -147,7 +147,7 @@ Delete your cv.
 ```http
   POST /logout
 ```
-logout user
+ logout user
 
 
 
